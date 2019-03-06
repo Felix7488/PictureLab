@@ -13,25 +13,32 @@ public class IntArrayWorkerTester
   /** Method to test fillPattern1 */
   public static void testFillPattern1()
   {
-    IntArrayWorker worker = new IntArrayWorker();
-    int[][] nums = new int[3][4];
-    worker.setMatrix(nums);
-    worker.fillPattern1();
-    System.out.println("fills with 2's on diagonal, 3's to left, and 1's to right");
-    worker.print();
+      for (int row = 0; row < matrix.length; row++){
+          for(int col = 0; col < matrix [0].length;col++)
+          {
+            if (row<col)
+              matrix[row][col]=1;
+            else if (row == col)
+              matrix[row][col]=2;
+            else
+              matrix[row][col]=3;
+          }
+      }
   }
   
   /** Method to test getCount*/
-//  public static void testGetCount()
-//  {
-//    IntArrayWorker worker = new IntArrayWorker();
-//    int[][] nums = new int[3][4];
-//    worker.setMatrix(nums);
-//    worker.fillPattern1();
-//    int count = worker.getCount(1);
-//    System.out.println("Count should be 6 and count is " + count);
-//  }
-  
+  public int getCount(int n)
+  {
+    int count =0;
+    for(int[] row : matrix)
+      for(int pixel : row)
+      {
+        if(pixel==n)
+            count++;
+      }
+    return count;
+ }
+   
   /** Method to test getTotal */
   public static void testGetTotal()
   {
@@ -52,7 +59,7 @@ public class IntArrayWorkerTester
     System.out.println("Total should be 21 and is " + total);
   }
   
-  /** Method to test getLargest */
+
 //  public static void testGetLargest()
 //  { // test when largest is last
 //    IntArrayWorker worker = new IntArrayWorker();
