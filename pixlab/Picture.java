@@ -460,7 +460,16 @@ public class Picture extends SimplePicture
     }
   }
   
-  
+  public static void testCopy()
+  {
+      Picture beach = new Picture("beach.jpg");
+      Picture flower1 = new Picture("flower1.jpg");
+      Picture snowman = new Picture("snowman.jpg");
+      beach.copy(snowman,50,100);
+    }
+    
+    
+    
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
